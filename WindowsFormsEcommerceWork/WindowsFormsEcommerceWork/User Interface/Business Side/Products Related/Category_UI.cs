@@ -34,6 +34,7 @@ namespace WindowsFormsEcommerceWork.User_Interface.Business_Side.Products_Relate
         {
             var product = new Product_UI();
             product.Show();
+            this.Hide();
             
         }
 

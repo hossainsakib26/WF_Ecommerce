@@ -8,6 +8,8 @@ namespace WindowsFormsEcommerceWork.Models.Business_Side
 {
     public class Product
     {
-
+        public int Id { get; set; }
+        public string Name { get; set; }
+        
     }
 }
