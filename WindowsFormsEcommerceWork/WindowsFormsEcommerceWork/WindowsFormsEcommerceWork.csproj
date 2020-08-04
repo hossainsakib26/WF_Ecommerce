@@ -54,14 +54,24 @@
     </Compile>
     <Compile Include="Models\Business Side\Category.cs" />
     <Compile Include="Models\Business Side\Product.cs" />
+    <Compile Include="Models\Business Side\ProductDetails.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reprository\Business Side\Category_Repository.cs" />
+    <Compile Include="Reprository\Elements_Repository\ComboBox_Repository.cs" />
+    <Compile Include="Reprository\Business Side\ProductDetails_Repository.cs" />
+    <Compile Include="Reprository\Business Side\Product_Repository.cs" />
     <Compile Include="User Interface\Business Side\Products Related\Category_UI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="User Interface\Business Side\Products Related\Category_UI.Designer.cs">
       <DependentUpon>Category_UI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\Business Side\Products Related\ProductDetails_UI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Interface\Business Side\Products Related\ProductDetails_UI.Designer.cs">
+      <DependentUpon>ProductDetails_UI.cs</DependentUpon>
     </Compile>
     <Compile Include="User Interface\Business Side\Products Related\Product_UI.cs">
       <SubType>Form</SubType>
@@ -85,10 +95,15 @@
     <EmbeddedResource Include="User Interface\Business Side\Products Related\Category_UI.resx">
       <DependentUpon>Category_UI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\Business Side\Products Related\ProductDetails_UI.resx">
+      <DependentUpon>ProductDetails_UI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Interface\Business Side\Products Related\Product_UI.resx">
       <DependentUpon>Product_UI.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\WindowsFormsEcommerceWork.Models.Business_Side.Category.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsEcommerceWork.Models.Business_Side.Product.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsEcommerceWork.Models.Business_Side.ProductDetails.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -104,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BusinessLogic\" />
+    <Folder Include="Models\Business Side VM\" />
     <Folder Include="User Interface\Customer Side\" />
   </ItemGroup>
   <ItemGroup>

@@ -62,7 +62,7 @@ namespace WindowsFormsEcommerceWork.User_Interface.Business_Side.Products_Relate
                 }
                 else
                 {
-                    MessageBox.Show($"name length is small must be highet then 4");
+                    ErrorLabel.Text = $"name length must higher then 4";
                     return;
                 }
             }
@@ -79,7 +79,7 @@ namespace WindowsFormsEcommerceWork.User_Interface.Business_Side.Products_Relate
                 }
                 else
                 {
-                    MessageBox.Show($"code length is big must be smaller then 4");
+                    ErrorLabel.Text = $"code length must smaller then 4";
                     return;
                 }
             }
@@ -89,12 +89,12 @@ namespace WindowsFormsEcommerceWork.User_Interface.Business_Side.Products_Relate
                 var isSave = db.AddCat(category);
                 if (isSave)
                 {
-                    MessageBox.Show($"{category.Name} is save successfully!");
+                    ErrorLabel.Text = $"{category.Name} is save successfully!";
                     LoadData();
                 }
                 else
                 {
-                    MessageBox.Show($"{category.Name} is not save!");
+                    ErrorLabel.Text = $"{category.Name} is not save!";
                     LoadData();
                     return;
                 }
@@ -104,12 +104,12 @@ namespace WindowsFormsEcommerceWork.User_Interface.Business_Side.Products_Relate
                 var isUpdate = db.Update(id, category);
                 if (isUpdate)
                 {
-                    MessageBox.Show($"{name} is updated");
+                    ErrorLabel.Text = $"{name} is updated";
                     LoadData();
                 }
                 else
                 {
-                    MessageBox.Show($"{name} is not updated");
+                    ErrorLabel.Text = $"{name} is not updated";
                     LoadData();
                     return;
                 }

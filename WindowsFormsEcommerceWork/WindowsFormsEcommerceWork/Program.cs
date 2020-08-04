@@ -17,7 +17,7 @@ namespace WindowsFormsEcommerceWork
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Category_UI());
+            Application.Run(new ProductDetails_UI());
         }
     }
 }
