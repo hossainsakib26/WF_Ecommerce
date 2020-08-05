@@ -31,13 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductDetails_UI));
             this.detailsDataGridView = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.singlePriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoryComboBox = new System.Windows.Forms.ComboBox();
@@ -61,14 +54,24 @@
             this.label2 = new System.Windows.Forms.Label();
             this.productComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.singlePriceTextBox = new System.Windows.Forms.TextBox();
+            this.costPriceTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.salePriceTextBox = new System.Windows.Forms.TextBox();
+            this.vMProductDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salePriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.detailsDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productDetailsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeletePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vMProductDetailsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // detailsDataGridView
@@ -77,57 +80,17 @@
             this.detailsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.detailsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
-            this.categoryIdDataGridViewTextBoxColumn,
-            this.productIdDataGridViewTextBoxColumn,
+            this.categoryDataGridViewTextBoxColumn,
+            this.productDataGridViewTextBoxColumn,
             this.quantityDataGridViewTextBoxColumn,
             this.totalPriceDataGridViewTextBoxColumn,
-            this.singlePriceDataGridViewTextBoxColumn});
-            this.detailsDataGridView.DataSource = this.productDetailsBindingSource;
-            this.detailsDataGridView.Location = new System.Drawing.Point(227, 302);
+            this.costPriceDataGridViewTextBoxColumn,
+            this.salePriceDataGridViewTextBoxColumn});
+            this.detailsDataGridView.DataSource = this.vMProductDetailsBindingSource;
+            this.detailsDataGridView.Location = new System.Drawing.Point(227, 362);
             this.detailsDataGridView.Name = "detailsDataGridView";
-            this.detailsDataGridView.Size = new System.Drawing.Size(577, 220);
+            this.detailsDataGridView.Size = new System.Drawing.Size(651, 160);
             this.detailsDataGridView.TabIndex = 33;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // categoryIdDataGridViewTextBoxColumn
-            // 
-            this.categoryIdDataGridViewTextBoxColumn.DataPropertyName = "CategoryId";
-            this.categoryIdDataGridViewTextBoxColumn.HeaderText = "CategoryId";
-            this.categoryIdDataGridViewTextBoxColumn.Name = "categoryIdDataGridViewTextBoxColumn";
-            // 
-            // productIdDataGridViewTextBoxColumn
-            // 
-            this.productIdDataGridViewTextBoxColumn.DataPropertyName = "ProductId";
-            this.productIdDataGridViewTextBoxColumn.HeaderText = "ProductId";
-            this.productIdDataGridViewTextBoxColumn.Name = "productIdDataGridViewTextBoxColumn";
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            // 
-            // totalPriceDataGridViewTextBoxColumn
-            // 
-            this.totalPriceDataGridViewTextBoxColumn.DataPropertyName = "TotalPrice";
-            this.totalPriceDataGridViewTextBoxColumn.HeaderText = "TotalPrice";
-            this.totalPriceDataGridViewTextBoxColumn.Name = "totalPriceDataGridViewTextBoxColumn";
-            // 
-            // singlePriceDataGridViewTextBoxColumn
-            // 
-            this.singlePriceDataGridViewTextBoxColumn.DataPropertyName = "SinglePrice";
-            this.singlePriceDataGridViewTextBoxColumn.HeaderText = "SinglePrice";
-            this.singlePriceDataGridViewTextBoxColumn.Name = "singlePriceDataGridViewTextBoxColumn";
-            // 
-            // productDetailsBindingSource
-            // 
-            this.productDetailsBindingSource.DataSource = typeof(WindowsFormsEcommerceWork.Models.Business_Side.ProductDetails);
             // 
             // productBindingSource
             // 
@@ -153,7 +116,7 @@
             // DeletePictureBox
             // 
             this.DeletePictureBox.Image = global::WindowsFormsEcommerceWork.Properties.Resources.icons8_delete_bin_;
-            this.DeletePictureBox.Location = new System.Drawing.Point(445, 266);
+            this.DeletePictureBox.Location = new System.Drawing.Point(445, 308);
             this.DeletePictureBox.Name = "DeletePictureBox";
             this.DeletePictureBox.Size = new System.Drawing.Size(30, 29);
             this.DeletePictureBox.TabIndex = 31;
@@ -171,7 +134,7 @@
             // 
             this.SaveButton.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.SaveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.SaveButton.Location = new System.Drawing.Point(365, 265);
+            this.SaveButton.Location = new System.Drawing.Point(365, 307);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 31);
             this.SaveButton.TabIndex = 29;
@@ -184,7 +147,7 @@
             this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
             this.pictureBox2.Image = global::WindowsFormsEcommerceWork.Properties.Resources.icons8_delete_32;
             this.pictureBox2.InitialImage = null;
-            this.pictureBox2.Location = new System.Drawing.Point(783, 1);
+            this.pictureBox2.Location = new System.Drawing.Point(858, 1);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(30, 31);
             this.pictureBox2.TabIndex = 21;
@@ -406,20 +369,87 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(249, 230);
+            this.label3.Location = new System.Drawing.Point(262, 229);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 20);
+            this.label3.Size = new System.Drawing.Size(91, 20);
             this.label3.TabIndex = 26;
-            this.label3.Text = "Single Price";
+            this.label3.Text = "Cost Price";
             // 
-            // singlePriceTextBox
+            // costPriceTextBox
             // 
-            this.singlePriceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.singlePriceTextBox.Location = new System.Drawing.Point(365, 227);
-            this.singlePriceTextBox.Multiline = true;
-            this.singlePriceTextBox.Name = "singlePriceTextBox";
-            this.singlePriceTextBox.Size = new System.Drawing.Size(202, 26);
-            this.singlePriceTextBox.TabIndex = 28;
+            this.costPriceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.costPriceTextBox.Location = new System.Drawing.Point(365, 227);
+            this.costPriceTextBox.Multiline = true;
+            this.costPriceTextBox.Name = "costPriceTextBox";
+            this.costPriceTextBox.Size = new System.Drawing.Size(202, 26);
+            this.costPriceTextBox.TabIndex = 28;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label4.Location = new System.Drawing.Point(262, 261);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(90, 20);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Sale Price";
+            // 
+            // salePriceTextBox
+            // 
+            this.salePriceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salePriceTextBox.Location = new System.Drawing.Point(365, 259);
+            this.salePriceTextBox.Multiline = true;
+            this.salePriceTextBox.Name = "salePriceTextBox";
+            this.salePriceTextBox.Size = new System.Drawing.Size(202, 26);
+            this.salePriceTextBox.TabIndex = 28;
+            // 
+            // vMProductDetailsBindingSource
+            // 
+            this.vMProductDetailsBindingSource.DataSource = typeof(WindowsFormsEcommerceWork.Models.Business_Side_VM.VM_ProductDetails);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // categoryDataGridViewTextBoxColumn
+            // 
+            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
+            this.categoryDataGridViewTextBoxColumn.HeaderText = "Category";
+            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
+            // 
+            // productDataGridViewTextBoxColumn
+            // 
+            this.productDataGridViewTextBoxColumn.DataPropertyName = "Product";
+            this.productDataGridViewTextBoxColumn.HeaderText = "Product";
+            this.productDataGridViewTextBoxColumn.Name = "productDataGridViewTextBoxColumn";
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            // 
+            // totalPriceDataGridViewTextBoxColumn
+            // 
+            this.totalPriceDataGridViewTextBoxColumn.DataPropertyName = "TotalPrice";
+            this.totalPriceDataGridViewTextBoxColumn.HeaderText = "TotalPrice";
+            this.totalPriceDataGridViewTextBoxColumn.Name = "totalPriceDataGridViewTextBoxColumn";
+            // 
+            // costPriceDataGridViewTextBoxColumn
+            // 
+            this.costPriceDataGridViewTextBoxColumn.DataPropertyName = "CostPrice";
+            this.costPriceDataGridViewTextBoxColumn.HeaderText = "CostPrice";
+            this.costPriceDataGridViewTextBoxColumn.Name = "costPriceDataGridViewTextBoxColumn";
+            // 
+            // salePriceDataGridViewTextBoxColumn
+            // 
+            this.salePriceDataGridViewTextBoxColumn.DataPropertyName = "SalePrice";
+            this.salePriceDataGridViewTextBoxColumn.HeaderText = "SalePrice";
+            this.salePriceDataGridViewTextBoxColumn.Name = "salePriceDataGridViewTextBoxColumn";
             // 
             // ProductDetails_UI
             // 
@@ -427,7 +457,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(812, 534);
+            this.ClientSize = new System.Drawing.Size(890, 534);
             this.ControlBox = false;
             this.Controls.Add(this.detailsDataGridView);
             this.Controls.Add(this.productComboBox);
@@ -436,10 +466,12 @@
             this.Controls.Add(this.ErrorLabel);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.singlePriceTextBox);
+            this.Controls.Add(this.salePriceTextBox);
+            this.Controls.Add(this.costPriceTextBox);
             this.Controls.Add(this.totalPriceTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.quantityTextBox);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.categorylabel);
             this.Controls.Add(this.labelCode);
@@ -451,12 +483,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductDetails_UI";
             ((System.ComponentModel.ISupportInitialize)(this.detailsDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productDetailsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeletePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.vMProductDetailsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -485,16 +517,20 @@
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.BindingSource productDetailsBindingSource;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox productComboBox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoryIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalPriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn singlePriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox singlePriceTextBox;
+        private System.Windows.Forms.TextBox costPriceTextBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox salePriceTextBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn salePriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource vMProductDetailsBindingSource;
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsEcommerceWork.Models.Business_Side
+namespace WindowsFormsEcommerceWork.Models.Business_Side_VM
 {
-    public class ProductDetails
+    public class VM_ProductDetails
     {
         public long Id { get; set; }
         public int Quantity { get; set; }
@@ -14,7 +14,7 @@ namespace WindowsFormsEcommerceWork.Models.Business_Side
         public double CostPrice { get; set; }
         public double SalePrice { get; set; }
 
-        public int CategoryId { get; set; }
-        public int ProductId { get; set; }
+        public string Category { get; set; }
+        public string Product { get; set; }
     }
 }

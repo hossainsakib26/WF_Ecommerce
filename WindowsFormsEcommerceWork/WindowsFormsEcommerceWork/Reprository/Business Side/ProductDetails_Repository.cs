@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WindowsFormsEcommerceWork.Models.Business_Side;
+using WindowsFormsEcommerceWork.Models.Business_Side_VM;
 
 namespace WindowsFormsEcommerceWork.Reprository.Business_Side
 {
@@ -53,14 +54,15 @@ namespace WindowsFormsEcommerceWork.Reprository.Business_Side
 
         public bool Add(ProductDetails details)
         {
-            string query = $@"INSERT INTO ProductDetails (Id, ProductId, CategoryId, Quantity, TotalPrice, SinglePrice) VALUES (@Id, @ProductId, @CategoryId, @Quantity, @TotalPrice, @SinglePrice)";
+            string query = $@"INSERT INTO ProductDetails (Id, ProductId, CategoryId, Quantity, TotalPrice, CostPrice, SalePrice) VALUES (@Id, @ProductId, @CategoryId, @Quantity, @TotalPrice, @CostPrice, @SalePrice)";
             SqlCommand command = new SqlCommand(query, _conn);
             command.Parameters.AddWithValue("@Id", details.Id);
             command.Parameters.AddWithValue("@ProductId", details.ProductId);
             command.Parameters.AddWithValue("@CategoryId", details.CategoryId);
             command.Parameters.AddWithValue("@Quantity", details.Quantity);
             command.Parameters.AddWithValue("@TotalPrice", details.TotalPrice);
-            command.Parameters.AddWithValue("@SinglePrice", details.SinglePrice);
+            command.Parameters.AddWithValue("@CostPrice", details.CostPrice);
+            command.Parameters.AddWithValue("@SalePrice", details.SalePrice);
 
             var isSave = SaveChange(command);
             if (isSave)
@@ -73,9 +75,9 @@ namespace WindowsFormsEcommerceWork.Reprository.Business_Side
             }
         }
 
-        public List<ProductDetails> GetAllDetails()
+        public List<VM_ProductDetails> GetAllDetails()
         {
-            string query = "Select * From ProductDetails";
+            string query = "select * From Vw_ProductDetails";
             SqlCommand command = new SqlCommand(query, _conn);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable dt = new DataTable();
@@ -83,17 +85,18 @@ namespace WindowsFormsEcommerceWork.Reprository.Business_Side
             adapter.Fill(dt);
             _conn.Close();
 
-            List<ProductDetails> details = new List<ProductDetails>();
+            List<VM_ProductDetails> details = new List<VM_ProductDetails>();
             foreach (DataRow row in dt.Rows)
             {
-                var pdetail = new ProductDetails 
+                var pdetail = new VM_ProductDetails
                 {
                     Id = Convert.ToInt32(row["Id"]),
-                    CategoryId = Convert.ToInt32(row["CategoryId"]),
-                    ProductId = Convert.ToInt32(row["ProductId"]),
+                    Category = row["Category Name"].ToString(),
+                    Product = row["Product Name"].ToString(),
                     Quantity = Convert.ToInt32(row["Quantity"]),
                     TotalPrice = Convert.ToDouble(row["TotalPrice"]),
-                    SinglePrice = Convert.ToDouble(row["SinglePrice"])
+                    CostPrice = Convert.ToDouble(row["CostPrice"]),
+                    SalePrice = Convert.ToDouble(row["SalePrice"])
                 };
                 details.Add(pdetail);
             }

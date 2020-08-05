@@ -20,8 +20,11 @@ namespace WindowsFormsEcommerceWork.User_Interface.Business_Side.Products_Relate
             LoadComboData();
             quantityTextBox.Text = "0";
             totalPriceTextBox.Text = "0";
-            singlePriceTextBox.Text = "0";
+            costPriceTextBox.Text = "0";
+            salePriceTextBox.Text = "0";
             DeletePictureBox.Visible = false;
+
+            LoadData();
         }
 
         Category_Repository cat_db;
@@ -42,7 +45,9 @@ namespace WindowsFormsEcommerceWork.User_Interface.Business_Side.Products_Relate
 
             int quantity = Convert.ToInt32(quantityTextBox.Text);
             double totalPrice = Convert.ToDouble(totalPriceTextBox.Text);
-            double singlePrice = Convert.ToDouble(singlePriceTextBox.Text);
+            double costPrice = Convert.ToDouble(costPriceTextBox.Text);
+            double salePrice = Convert.ToDouble(salePriceTextBox.Text);
+
             catId = catComboObj.Id;
             details.CategoryId = catId;
             details.ProductId = prodCombObj.Id;
@@ -64,15 +69,25 @@ namespace WindowsFormsEcommerceWork.User_Interface.Business_Side.Products_Relate
             {
                 details.TotalPrice = totalPrice;
             }
-            if (singlePrice == 0)
+            if (costPrice == 0)
             {
-                ErrorLabel.Text = "single price never 0";
+                ErrorLabel.Text = "cost price never 0";
                 return;
             }
             else
             {
-                details.SinglePrice = singlePrice;
+                details.CostPrice = costPrice;
             }
+            if (salePrice == 0)
+            {
+                ErrorLabel.Text = "Sale price never 0";
+                return;
+            }
+            else
+            {
+                details.SalePrice = salePrice;
+            }
+
             details.Id = db.SetDetailsId("SQ_ProductDetailsId");
 
             var isDataSave = db.Add(details);
@@ -101,8 +116,8 @@ namespace WindowsFormsEcommerceWork.User_Interface.Business_Side.Products_Relate
         {
             db = new ProductDetails_Repository();
 
-            productDetailsBindingSource.DataSource = null;
-            productDetailsBindingSource.DataSource = db.GetAllDetails();
+            vMProductDetailsBindingSource.DataSource = null;
+            vMProductDetailsBindingSource.DataSource = db.GetAllDetails();
         }
 
         void Clear()
@@ -110,7 +125,7 @@ namespace WindowsFormsEcommerceWork.User_Interface.Business_Side.Products_Relate
             productBindingSource.DataSource = null;
             quantityTextBox.Text = "0";
             totalPriceTextBox.Text = "0";
-            singlePriceTextBox.Text = "0";
+            costPriceTextBox.Text = "0";
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

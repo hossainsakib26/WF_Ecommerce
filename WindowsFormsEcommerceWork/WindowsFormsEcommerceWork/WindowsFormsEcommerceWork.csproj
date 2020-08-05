@@ -52,6 +52,7 @@
     <Compile Include="Base_UI.Designer.cs">
       <DependentUpon>Base_UI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Business Side VM\VM_ProductDetails.cs" />
     <Compile Include="Models\Business Side\Category.cs" />
     <Compile Include="Models\Business Side\Product.cs" />
     <Compile Include="Models\Business Side\ProductDetails.cs" />
@@ -104,6 +105,7 @@
     <None Include="Properties\DataSources\WindowsFormsEcommerceWork.Models.Business_Side.Category.datasource" />
     <None Include="Properties\DataSources\WindowsFormsEcommerceWork.Models.Business_Side.Product.datasource" />
     <None Include="Properties\DataSources\WindowsFormsEcommerceWork.Models.Business_Side.ProductDetails.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsEcommerceWork.Models.Business_Side_VM.VM_ProductDetails.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -119,7 +121,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BusinessLogic\" />
-    <Folder Include="Models\Business Side VM\" />
     <Folder Include="User Interface\Customer Side\" />
   </ItemGroup>
   <ItemGroup>

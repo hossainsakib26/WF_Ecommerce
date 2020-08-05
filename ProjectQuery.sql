@@ -30,3 +30,13 @@ on PD.CategoryId = C.Id
 select Name From Products AS P Where p.CategoryId = 18
 
 Select * FROM Products
+
+Create View Vw_ProductDetails AS
+Select Pd.Id, c.Name 'Category Name', p.Name as 'Product Name', pd.Quantity, pd.TotalPrice, pd.CostPrice, pd.SalePrice
+from ProductDetails as Pd
+inner join Products as P
+on pd.ProductId = p.Id
+inner join Categories as c
+on pd.CategoryId = c.Id
+
+select * From Vw_ProductDetails
