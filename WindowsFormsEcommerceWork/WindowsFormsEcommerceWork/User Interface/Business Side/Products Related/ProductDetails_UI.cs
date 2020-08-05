@@ -126,6 +126,7 @@ namespace WindowsFormsEcommerceWork.User_Interface.Business_Side.Products_Relate
             quantityTextBox.Text = "0";
             totalPriceTextBox.Text = "0";
             costPriceTextBox.Text = "0";
+            salePriceTextBox.Text = "0";
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
