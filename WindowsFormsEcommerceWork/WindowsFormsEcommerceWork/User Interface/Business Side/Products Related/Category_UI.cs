@@ -83,6 +83,7 @@ namespace WindowsFormsEcommerceWork.User_Interface.Business_Side.Products_Relate
                     return;
                 }
             }
+            category.Id = db.SetCategoryId("SQ_CategoryId");
 
             if (SaveButton.Text == "Save")
             {

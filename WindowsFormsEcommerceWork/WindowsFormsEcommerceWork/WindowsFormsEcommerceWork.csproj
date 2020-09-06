@@ -56,9 +56,13 @@
     <Compile Include="Models\Business Side\Category.cs" />
     <Compile Include="Models\Business Side\Product.cs" />
     <Compile Include="Models\Business Side\ProductDetails.cs" />
+    <Compile Include="Models\Buyer Side VM\BuyerSideProductsVM.cs" />
+    <Compile Include="Models\Buyer Side VM\VW_AllDetails.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reprository\Business Side\Category_Repository.cs" />
+    <Compile Include="Reprository\BuyerSide_repository\BuyerSideRepository.cs" />
     <Compile Include="Reprository\Elements_Repository\ComboBox_Repository.cs" />
     <Compile Include="Reprository\Business Side\ProductDetails_Repository.cs" />
     <Compile Include="Reprository\Business Side\Product_Repository.cs" />
@@ -79,6 +83,18 @@
     </Compile>
     <Compile Include="User Interface\Business Side\Products Related\Product_UI.Designer.cs">
       <DependentUpon>Product_UI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\Customer Side\AddQuantityDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Interface\Customer Side\AddQuantityDetails.Designer.cs">
+      <DependentUpon>AddQuantityDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\Customer Side\ProductList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Interface\Customer Side\ProductList.Designer.cs">
+      <DependentUpon>ProductList.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Base_UI.resx">
       <DependentUpon>Base_UI.cs</DependentUpon>
@@ -102,10 +118,19 @@
     <EmbeddedResource Include="User Interface\Business Side\Products Related\Product_UI.resx">
       <DependentUpon>Product_UI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\Customer Side\AddQuantityDetails.resx">
+      <DependentUpon>AddQuantityDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Interface\Customer Side\ProductList.resx">
+      <DependentUpon>ProductList.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\DataSources\WindowsFormsEcommerceWork.Models.Business_Side.Category.datasource" />
     <None Include="Properties\DataSources\WindowsFormsEcommerceWork.Models.Business_Side.Product.datasource" />
     <None Include="Properties\DataSources\WindowsFormsEcommerceWork.Models.Business_Side.ProductDetails.datasource" />
     <None Include="Properties\DataSources\WindowsFormsEcommerceWork.Models.Business_Side_VM.VM_ProductDetails.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsEcommerceWork.Models.Buyer_Side_VM.BuyerSideProductsVM.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsEcommerceWork.Models.Buyer_Side_VM.VW_AllDetails.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsEcommerceWork.Models.Order.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -121,7 +146,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BusinessLogic\" />
-    <Folder Include="User Interface\Customer Side\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-shopping-cart-48.png" />
@@ -155,6 +179,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-delete-bin-.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-shopping-cart-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-shopping-cart-16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

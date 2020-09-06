@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsEcommerceWork.User_Interface.Business_Side.Products_Related;
 
 namespace WindowsFormsEcommerceWork
 {
@@ -15,6 +16,12 @@ namespace WindowsFormsEcommerceWork
         public Base_UI()
         {
             InitializeComponent();
+        }
+
+        private void SellerButton_Click(object sender, EventArgs e)
+        {
+            Category_UI _catUI = new Category_UI();
+            _catUI.Show();
         }
     }
 }

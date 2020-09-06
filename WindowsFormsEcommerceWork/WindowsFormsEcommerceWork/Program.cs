@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsEcommerceWork.User_Interface.Business_Side.Products_Related;
+using WindowsFormsEcommerceWork.User_Interface.Customer_Side;
 
 namespace WindowsFormsEcommerceWork
 {
@@ -17,7 +18,8 @@ namespace WindowsFormsEcommerceWork
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ProductDetails_UI());
+            //Application.Run(new Base_UI());
+            Application.Run(new ProductList());
         }
     }
 }

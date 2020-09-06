@@ -63,6 +63,26 @@ namespace WindowsFormsEcommerceWork.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cart {
+            get {
+                object obj = ResourceManager.GetObject("cart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cart1 {
+            get {
+                object obj = ResourceManager.GetObject("cart1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_activity_history_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-activity-history-32", resourceCulture);
@@ -146,6 +166,26 @@ namespace WindowsFormsEcommerceWork.Properties {
         internal static System.Drawing.Bitmap icons8_save_all_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-save-all-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_shopping_cart_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-shopping-cart-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_shopping_cart_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-shopping-cart-32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

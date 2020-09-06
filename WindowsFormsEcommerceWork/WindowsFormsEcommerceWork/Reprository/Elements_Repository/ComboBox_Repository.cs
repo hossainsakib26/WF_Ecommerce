@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -40,6 +41,34 @@ namespace WindowsFormsEcommerceWork.Reprository.Business_Side
             {
                 return null;
             }
+        }
+
+
+
+        public List<Category> GetCat()
+        {
+            string query = $@"select * From Categories";
+            SqlCommand command = new SqlCommand(query, _conn);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+
+            DataTable dt = new DataTable();
+            _conn.Open();
+            adapter.Fill(dt);
+            _conn.Close();
+
+            var categories = new List<Category>();
+            foreach (DataRow dr in dt.Rows)
+            {
+                var cat = new Category
+                {
+                    Id = Convert.ToInt32(dr["Id"]),
+                    Name = dr["Name"].ToString(),
+                    //Code = dr["Code"].ToString(),
+                };
+                categories.Add(cat);
+            }
+
+            return categories;
         }
     }
 }

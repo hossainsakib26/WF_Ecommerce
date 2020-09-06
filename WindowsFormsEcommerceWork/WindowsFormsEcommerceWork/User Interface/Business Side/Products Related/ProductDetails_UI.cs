@@ -28,7 +28,6 @@ namespace WindowsFormsEcommerceWork.User_Interface.Business_Side.Products_Relate
         }
 
         Category_Repository cat_db;
-        Product_Repository pro_db;
         ProductDetails_Repository db;
         ProductDetails details;
         ComboBox_Repository cbDB;
@@ -152,6 +151,13 @@ namespace WindowsFormsEcommerceWork.User_Interface.Business_Side.Products_Relate
             Product_UI pUi = new Product_UI();
             pUi.Show();
             this.Hide();
+        }
+
+        private void categoryButton_Click(object sender, EventArgs e)
+        {
+            Category_UI catUI = new Category_UI();
+            catUI.Show();
+            Hide();
         }
     }
 }

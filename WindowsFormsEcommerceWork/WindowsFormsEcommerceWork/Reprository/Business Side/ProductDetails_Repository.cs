@@ -109,5 +109,40 @@ namespace WindowsFormsEcommerceWork.Reprository.Business_Side
                 return null;
             }
         }
+
+        public ProductDetails GetByID(int id)
+        {
+            string query = @"Select * From ProductDetails Where Id = @P_Id";
+            SqlCommand command = new SqlCommand(query, _conn);
+            command.Parameters.AddWithValue("@P_Id", id);
+            _conn.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            
+            while (reader.Read())
+            {
+                var details = new ProductDetails
+                {
+                    Id = Convert.ToInt32(reader["Id"]),
+                    CategoryId = Convert.ToInt32(reader["CategoryId"]),
+                    ProductId = Convert.ToInt32(reader["ProductId"]),
+                    Quantity = Convert.ToInt32(reader["Quantity"]),
+                    CostPrice = Convert.ToDouble(reader["CostPrice"]),
+                    SalePrice = Convert.ToDouble(reader["SalePrice"]),
+                    TotalPrice = Convert.ToDouble(reader["TotalPrice"]),
+                };
+
+                if (details.Id > 0)
+                {
+                    return details;
+                }
+                else
+                {
+                    _conn.Close();
+                    return null;
+                }
+            }
+            _conn.Close();
+            return null;
+        }
     }
 }
